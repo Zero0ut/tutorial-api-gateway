@@ -26,6 +26,7 @@ The following guides illustrate how to use some features concretely:
 
 Using SocketUtils to set random the port
 https://www.javacodemonk.com/setting-a-random-port-in-spring-boot-application-at-startup-87022e01
+https://blog.joshmlwood.com/eureka-spring-cloud-random-port/
 
 Report of a projects dependencies
 mvn project-info-reports:dependencies

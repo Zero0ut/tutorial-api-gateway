@@ -1,19 +1,21 @@
 spring:
   application:
-    name: 'simple-api'
+    name: simple-service
   cloud:
     loadbalancer:
       ribbon:
         enabled: false
-
-#server:
-#  port: '${random.int(5000,5100)}'
+port:
+  number:
+    min: 7080
+    max: 7099
 
 server:
   ribbon:
     eureka:
       enabled: true
     ServerListRefreshInterval: 1000
+
 
 eureka:
   client:
@@ -22,8 +24,7 @@ eureka:
     service-url:
       defaultZone: http://${registry.host:localhost}:${registry.port:8761}/eureka/
     instance:
-#      hostname: ${vcap.application.uris[0]:localhost}
-#      prefer-ip-address: true
+      instanceId: my-microservice
       leaseRenewalIntervalInSeconds: 1
       leaseExpirationDurationInSeconds: 2
 
