@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: 'simple-api'
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+#server:
+#  port: '${random.int(5000,5100)}'
+
+server:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 1000
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRigstry: true
+    service-url:
+      defaultZone: http://${registry.host:localhost}:${registry.port:8761}/eureka/
+    instance:
+#      hostname: ${vcap.application.uris[0]:localhost}
+#      prefer-ip-address: true
+      leaseRenewalIntervalInSeconds: 1
+      leaseExpirationDurationInSeconds: 2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    shutdown:
+      enable: true
+
+# Spring Thymeleaf
+#spring.thymeleaf.cache=false
+#spring.thymeleaf.enabled=true
+#spring.thymeleaf.prefix=classpath:/templates/
+#spring.thymeleaf.suffix=.html

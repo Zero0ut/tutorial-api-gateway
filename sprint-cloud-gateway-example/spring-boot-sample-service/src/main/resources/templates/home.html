@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Spring-Boot Simple Service</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" th:href="@{/}">Spring Boot 2.3.2.RELEASE</a>
+                </div>
+
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="container">
+        <h1 class="col-sm-12">Simple Microservices</h1>
+        <div class="col-sm-12">
+            <p>Welcome to <span th:text="${appName} + ' on Port: ' +  ${portNumber}">Our App</span></p>
+            <p>Message: <span th:text="${message}"></span></p>
+        </div>
+    </div>
+
+</body>
+</html>
